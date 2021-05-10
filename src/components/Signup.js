@@ -9,7 +9,7 @@ export default function Signup() {
   const passwordConfirmRef = useRef();
   const { signup } = useAuth();
   const [error, setError] = useState("");
-  const [loading, setLoading] =  useState(false);
+  const [loading, setLoading] = useState(false);
   const history = useHistory();
 
   async function handleSubmit(e) {
@@ -23,13 +23,12 @@ export default function Signup() {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      history.push("/")
+      history.push("/");
     } catch {
       setError("Failed to create an account");
     }
 
     setLoading(false);
-    
   }
 
   return (
